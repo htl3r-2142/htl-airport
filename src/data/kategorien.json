@@ -1,0 +1,38 @@
+{
+  "kategorien": [
+    {
+      "id": "selbststaendig",
+      "label": "Selbstständig",
+      "icon": "",
+      "beschreibung": "Sein eigener Chef sein – mit eigener Firma oder als Freelancer.",
+      "unterkategorien": [
+        { "id": "startup", "label": "Startup", "icon": "", "gate": "A1" },
+        { "id": "freelancer", "label": "Freelancer", "icon": "", "gate": "A2" },
+        { "id": "agentur", "label": "Eigene Agentur", "icon": "", "gate": "A3" }
+      ]
+    },
+    {
+      "id": "studieren",
+      "label": "Studieren",
+      "icon": "",
+      "beschreibung": "Nach der Matura weiterlernen – an einer Uni oder FH.",
+      "unterkategorien": [
+        { "id": "uni", "label": "Universität", "icon": "", "gate": "B1" },
+        { "id": "fh", "label": "Fachhochschule", "icon": "", "gate": "B2" },
+        { "id": "ausland", "label": "Studium im Ausland", "icon": "", "gate": "B3" }
+      ]
+    },
+    {
+      "id": "angestellt",
+      "label": "Angestellt",
+      "icon": "",
+      "beschreibung": "In einer Firma arbeiten – im Team, mit fixem Gehalt.",
+      "unterkategorien": [
+        { "id": "softwareentwicklung", "label": "Softwareentwicklung", "icon": "", "gate": "C1" },
+        { "id": "webdesign-medien", "label": "Webdesign & Medien", "icon": "", "gate": "C2" },
+        { "id": "it-security", "label": "IT-Security", "icon": "", "gate": "C" },
+        { "id": "projektmanagement", "label": "Projektmanagement", "icon": "", "gate": "C4" }
+      ]
+    }
+  ]
+}
