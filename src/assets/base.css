@@ -1,0 +1,65 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 16:9-Skalierung ohne JavaScript.
+   Bei 1920x1080 ist 1rem = 10px. Auf einem kleineren Bildschirm schrumpft
+   alles gleichmäßig mit, weil jede Größe in rem angegeben ist. */
+html {
+  font-size: calc(min(100vw, 177.7778vh) / 192);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-ui);
+  font-size: var(--fs-text);
+  line-height: 1.4;
+  overflow: hidden;            /* in der Station wird nie gescrollt */
+}
+
+h1, h2, p, ul { margin: 0; }
+
+/* Die Bühne: ein zentriertes 16:9-Feld.
+   Ist der Bildschirm anders geformt, bleiben oben/unten schwarze Balken -
+   das Layout bricht aber nie. */
+#app {
+  position: relative;
+  width: min(100vw, 177.7778vh);
+  height: min(100vh, 56.25vw);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Jede Seite füllt die Bühne komplett aus. */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+}
+
+/* Der Fokus muss aus 3 Metern erkennbar sein: dicker Rahmen UND Leuchten.
+   Eine dünne Outline sieht man aus der Entfernung nicht.
+   .is-fokus setzt du später selbst, wenn die Auswahl per Pfeiltaste wandert
+   und es gar kein echtes Fokus-Element gibt. */
+:focus-visible,
+.is-fokus {
+  outline: 0.6rem solid var(--c-fokus);
+  outline-offset: 0.4rem;
+  box-shadow: 0 0 0 0.3rem rgba(127, 212, 255, 0.35),
+              0 0 2.4rem rgba(127, 212, 255, 0.55);
+}
+
+/* Emojis brauchen die Emoji-Schrift, sonst zeigt Windows sie einfarbig. */
+.emoji {
+  font-family: var(--font-emoji);
+  line-height: 1;
+}

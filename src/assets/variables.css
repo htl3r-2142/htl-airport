@@ -1,3 +1,47 @@
 html {
   font-size: calc(min(100vw, 177.7778vh) / 192);
 }
+
+/* Alle Farben und Größen an einer Stelle.
+   Wer das Design ändern will, ändert nur diese Datei. */
+:root {
+  /* --- Farben --- */
+  --c-bg: #070d18;
+  --c-surface: #142440;
+  --c-surface-hell: #1c3155;
+  --c-border: #2a4570;
+  --c-text: #eaf0fa;
+  --c-text-leise: #9bb0d0;
+  --c-accent: #ffb020;
+  --c-accent-hell: #ffd47a;
+  --c-accent-text: #1a1000;
+  --c-fokus: #7fd4ff;
+  --c-fehler: #ff5c5c;
+
+  /* --- Schriften ---
+     Bewusst System-Schriften: Die Station läuft offline, eine Schrift aus
+     dem Internet wäre am Tag der offenen Tür nicht erreichbar. */
+  --font-ui: 'Segoe UI', system-ui, Arial, sans-serif;
+  --font-display: ui-monospace, Consolas, 'Courier New', monospace;
+  --font-emoji: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+
+  /* --- Schriftgrößen ---
+     1rem = 10px bei 1920x1080 (siehe base.css).
+     Fließtext liegt damit bei 32px - das braucht man für 3 Meter Abstand. */
+  --fs-klein: 2.4rem;
+  --fs-text: 3.2rem;
+  --fs-gross: 4rem;
+  --fs-h2: 5.6rem;
+  --fs-h1: 8rem;
+
+  /* --- Abstände --- */
+  --sp-1: 0.8rem;
+  --sp-2: 1.6rem;
+  --sp-3: 2.4rem;
+  --sp-4: 4rem;
+  --sp-5: 6.4rem;
+
+  /* --- Formen --- */
+  --radius: 1.6rem;
+  --border-w: 0.3rem;
+}
