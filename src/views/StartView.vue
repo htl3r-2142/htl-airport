@@ -1,36 +1,68 @@
 <script setup>
-import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useTastatur } from "@/composables/useTastatur.js";
-import { reise } from "@/stores/reise.js";
-import kategorienDaten from "@/data/kategorien.json";
-import emojiDaten from "@/data/emojis.json";
 
 const router = useRouter();
 
-const kategorien = kategorienDaten.kategorien;
-const emojis = emojiDaten.emojis;
-const letzteAktion = ref("noch keine");
-
+function checkinStarten() {
+  router.push("/pass");
+}
 useTastatur((aktion) => {
-  letzteAktion.value = aktion;
-  if (aktion === "BESTAETIGEN") router.push("/pass");
+  if (aktion === "BESTAETIGEN") {
+    checkinStarten();
+  }
 });
+
 </script>
 <template>
   <section class="screen start">
     <h1>HTL Rennweg Airport</h1>
-    <ul class="pruefung">
-      <li>{{ kategorien.length }} Kategorien</li>
-      <li>{{ emojis.length }} Emojis</li>
-      <li>Store erreichbar, Name ist: „{{ reise.name || "leer" }}"</li>
-    </ul>
-    <p class="protokoll">
-      Letzte Aktion: {{ letzteAktion }}
+
+    <p class="intro">
+      Willkommen! Hier siehst du, welche Wege nach der HTL möglich sind.
     </p>
-    <p>← → drücken, Enter leitet zur Pass-Seite</p>
+
+    <button class="checkin-btn" @click="checkinStarten">
+      Check-in starten
+    </button>
+
+    <p class="hinweis">Drücke Enter</p>
   </section>
 </template>
 <style scoped>
+.start {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  color: var(--c-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.intro {
+  font-size: var(--fs-gross);
+  color: var(--c-text-leise);
+}
+
+.checkin-btn {
+  margin-top: var(--sp-4);
+  padding: var(--sp-2) var(--sp-5);
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--c-accent);
+  color: var(--c-accent-text);
+  font-family: var(--font-ui);
+  font-size: var(--fs-h2);
+  cursor: pointer;
+}
+
+.hinweis {
+  font-size: var(--fs-klein);
+  color: var(--c-text-leise);
+}
 </style>
