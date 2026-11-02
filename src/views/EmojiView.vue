@@ -1,24 +1,26 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import { useTastatur } from "@/composables/useTastatur.js";
 import { reise } from "@/stores/reise.js";
 import emojiDaten from "@/data/emojis.json";
 
+const router = useRouter();
 const emojis = emojiDaten.emojis;
 const index = ref(0);
 
-function auswaehl(newIndex) {
+function auswahl(newIndex) {
   index.value = newIndex;
   reise.emoji = emojis[newIndex];
 }
-auswaehl(0);
+auswahl(0);
 
 function weiter() {
   let neu = index.value + 1;
   if (neu >= emojis.length) {
     neu = 0;
   }
-  auswaehl(neu);
+  auswahl(neu);
 }
 
 function zurueck() {
@@ -26,12 +28,17 @@ function zurueck() {
   if (neu < 0) {
     neu = emojis.length - 1;
   }
-  auswaehl(neu);
+  auswahl(neu);
+}
+
+function weiterZumCheckin() {
+  router.push("/checkin");
 }
 
 useTastatur((aktion) => {
   if (aktion === "LINKS") zurueck();
   if (aktion === "RECHTS") weiter();
+  if (aktion === "BESTAETIGEN") weiterZumCheckin();
 });
 </script>
 <template>
@@ -44,7 +51,7 @@ useTastatur((aktion) => {
         :key="i"
         class="emoji-feld emoji"
         :class="{ 'is-fokus': i === index }"
-        @click="auswaehl(i)"
+        @click="auswahl(i)"
       >
         {{ emojiZeichen }}
       </button>
@@ -86,6 +93,18 @@ h1 {
 .emoji-feld.is-fokus {
   transform: scale(1.1);
   background-color: var(--c-surface-hell);
+}
+
+.weiter-button {
+  margin-top: var(--sp-3);
+  padding: var(--sp-2) var(--sp-5);
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--c-accent);
+  color: var(--c-accent-text);
+  font-family: var(--font-ui);
+  font-size: var(--fs-gross);
+  cursor: pointer;
 }
 
 .hinweis {
