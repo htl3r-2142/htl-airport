@@ -119,7 +119,7 @@ h1 {
   font-family: var(--font-display);
   font-size: 3.2rem;
   color: var(--c-accent);
-  text-align: left;
+  text-align: left; 
 }
 
 .kopfzeile {

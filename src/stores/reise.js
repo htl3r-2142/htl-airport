@@ -1,7 +1,7 @@
 import { reactive } from 'vue'
 
 export const reise = reactive({
-  name: 'reise',
+  name: '',
   emoji: '',
   kategorie: null,
   unterkategorie: null,

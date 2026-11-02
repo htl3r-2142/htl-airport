@@ -29,12 +29,13 @@ useTastatur((aktion) => {
 });
 </script>
 <template>
-  <section>
+  <section class="screen pass">
     <h1>Wie heißt du?</h1>
 
     <input
       ref="eingabeFeld"
       v-model="reise.name"
+      class="namensfeld"
       type="text"
       maxlength="15"
       autocomplete="off"
@@ -42,11 +43,47 @@ useTastatur((aktion) => {
       @input="hinweis = false"
     />
 
-    <p v-if="hinweis">
+    <p v-if="hinweis" class="error">
       Bitte gib zuerst deinen Namen ein
     </p>
 
+    <p class="hinweis">Enter</p>
   </section>
 </template>
 <style scoped>
+.pass {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+.namensfeld {
+  width: 60rem;
+  padding: var(--sp-2) var(--sp-3);
+  border: var(--border-w) solid var(--c-border);
+  border-radius: var(--radius);
+  background-color: var(--c-surface);
+  color: var(--c-text);
+  font-family: var(--font-ui);
+  font-size: var(--fs-h2);
+  text-align: center;
+}
+
+.namensfeld::placeholder {
+  color: var(--c-text-leise);
+}
+
+.error {
+  color: var(--c-fehler);
+  font-size: var(--fs-text);
+}
+
+.hinweis {
+  font-size: var(--fs-klein);
+  color: var(--c-text-leise);
+}
 </style>
