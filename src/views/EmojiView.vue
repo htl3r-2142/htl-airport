@@ -8,10 +8,12 @@ import emojiDaten from "@/data/emojis.json";
 const router = useRouter();
 const emojis = emojiDaten.emojis;
 const index = ref(0);
+const zeigeHinweis = ref(false);
 
 function auswahl(newIndex) {
   index.value = newIndex;
   reise.emoji = emojis[newIndex];
+  zeigeHinweis.value = false;
 }
 auswahl(0);
 
@@ -32,6 +34,15 @@ function zurueck() {
 }
 
 function weiterZumCheckin() {
+  if (reise.name.trim() === "") {
+    router.push("/pass");
+    return;
+  }
+  if (reise.emoji === "") {
+    zeigeHinweis.value = true;
+    return;
+  }
+
   router.push("/checkin");
 }
 
@@ -42,7 +53,7 @@ useTastatur((aktion) => {
 });
 </script>
 <template>
-      <section class="screen emoji-seite">
+  <section class="screen emoji-seite">
     <h1>{{ reise.name }}, bitte wähle dein Emoji aus</h1>
 
     <div class="emoji-raster">
@@ -57,7 +68,11 @@ useTastatur((aktion) => {
       </button>
     </div>
 
-    <p class="hinweis">← → zum Auswählen <br> <strong>Enter</strong> zum Bestätigen</p>
+    <p class="hinweis">
+      ← → zum Auswählen <br />
+      <strong>Enter</strong> zum Bestätigen
+    </p>
+    <p v-if="zeigeHinweis" class="fehler">Bitte wähle zuerst ein Emoji aus.</p>
   </section>
 </template>
 <style>
@@ -108,7 +123,12 @@ h1 {
 }
 
 .hinweis {
-  font-size: var(--fs-klein);
+  font-size: var(--fs-gross2);
   color: var(--c-text-leise);
+}
+
+.fehler {
+  color: var(--c-fehler);
+  font-size: var(--fs-text);
 }
 </style>
