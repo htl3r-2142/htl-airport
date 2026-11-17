@@ -55,7 +55,7 @@ useTastatur((aktion) => {
     <p v-if="zeigeHinweis" class="fehler">Bitte wähle zuerst ein Emoji aus.</p>
   </section>
 </template>
-<style>
+<style scoped>
 .emoji-seite {
   align-items: center;
   text-align: center;
