@@ -15,8 +15,6 @@ const router = createRouter ({
         {path: "/checkin", name: "checkin", component: CheckinView},
         {path: "/unterkategorie", name: "unterkategorie", component: UnterkategorieView},
         {path: "/druck", name: "druck", component: DruckView},
-
-
     ],
 })
 
