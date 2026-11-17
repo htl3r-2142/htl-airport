@@ -85,6 +85,10 @@ h1, h2, p, ul { margin: 0; }
   /* Buttons erben Schrift und Farbe nicht */
   color: var(--c-text);
   font-family: var(--font-ui);
+  /* Inhalt senkrecht in der Mitte der Karte */
+  justify-content: center;
+  /* alle Karten gleich hoch, auf allen Seiten */
+  min-height: 45rem;
   cursor: pointer;
   /* nicht ausgewählte Karten etwas blasser */
   opacity: 0.6;

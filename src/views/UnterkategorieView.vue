@@ -64,9 +64,8 @@ useTastatur((aktion) => {
   </section>
 </template>
 <style scoped>
-/* Inhalt senkrecht in der Mitte */
-.checkin {
-  justify-content: center;
+/* von oben beginnen, damit alle Auswahl-Seiten gleich aufgebaut sind */
+.unterkategorie {
   text-align: center;
 }
 
@@ -80,8 +79,15 @@ h1 {
   font-size: var(--fs-h1);
 }
 
+/* bei 4 Karten ist weniger Platz -> Titel etwas kleiner */
+.karte-titel {
+  font-size: var(--fs-gross);
+}
+
+/* Hinweis ganz nach unten schieben */
 .hinweis {
-  font-size: var(--fs-text);
+  margin-top: auto;
+  font-size: var(--fs-gross2);
   color: var(--c-text-leise);
 }
 </style>
