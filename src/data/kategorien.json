@@ -4,7 +4,7 @@
       "id": "selbststaendig",
       "label": "Selbstständig",
       "icon": "💡",
-      "beschreibung": "Sein eigener Chef sein – mit eigener Firma oder als Freelancer.",
+      "beschreibung": "Sein dein eigener Chef",
       "unterkategorien": [
         { "id": "startup", "label": "Startup", "icon": "", "gate": "A1" },
         { "id": "freelancer", "label": "Freelancer", "icon": "", "gate": "A2" },
@@ -15,7 +15,7 @@
       "id": "studieren",
       "label": "Studieren",
       "icon": "🎓",
-      "beschreibung": "Nach der Matura weiterlernen – an einer Uni oder FH.",
+      "beschreibung": "Nach der Matura weiterbilden",
       "unterkategorien": [
         { "id": "uni", "label": "Universität", "icon": "", "gate": "B1" },
         { "id": "fh", "label": "Fachhochschule", "icon": "", "gate": "B2" },
@@ -30,7 +30,7 @@
       "unterkategorien": [
         { "id": "softwareentwicklung", "label": "Softwareentwicklung", "icon": "", "gate": "C1" },
         { "id": "webdesign-medien", "label": "Webdesign & Medien", "icon": "", "gate": "C2" },
-        { "id": "it-security", "label": "IT-Security", "icon": "", "gate": "C" },
+        { "id": "it-security", "label": "IT-Security", "icon": "", "gate": "C3" },
         { "id": "projektmanagement", "label": "Projektmanagement", "icon": "", "gate": "C4" }
       ]
     }
