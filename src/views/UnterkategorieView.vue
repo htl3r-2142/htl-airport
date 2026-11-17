@@ -27,8 +27,7 @@ function unterkategorieBestaetigen() {
     return;
   }
   reise.unterkategorie = kategorie.unterkategorien[index.value].id;
-  console.log("gespeichert:", reise.unterkategorie);
-  router.push("/flug");
+  router.push("/druck");
 }
 
 useTastatur((aktion) => {
