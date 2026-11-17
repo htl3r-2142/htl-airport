@@ -2,42 +2,22 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useTastatur } from "@/composables/useTastatur.js";
+import { useAuswahl } from "@/composables/useAuswahl.js";
 import { reise } from "@/stores/reise.js";
 import emojiDaten from "@/data/emojis.json";
 
 const router = useRouter();
 const emojis = emojiDaten.emojis;
-const index = ref(0);
+const { index, weiter, zurueck, waehle } = useAuswahl(emojis.length);
+
 const zeigeHinweis = ref(false);
-
-function auswahl(newIndex) {
-  index.value = newIndex;
-  reise.emoji = emojis[newIndex];
-  zeigeHinweis.value = false;
-}
-auswahl(0);
-
-function weiter() {
-  let neu = index.value + 1;
-  if (neu >= emojis.length) {
-    neu = 0;
-  }
-  auswahl(neu);
-}
-
-function zurueck() {
-  let neu = index.value - 1;
-  if (neu < 0) {
-    neu = emojis.length - 1;
-  }
-  auswahl(neu);
-}
 
 function weiterZumCheckin() {
   if (reise.name.trim() === "") {
     router.push("/pass");
     return;
   }
+  reise.emoji = emojis[index.value];
   if (reise.emoji === "") {
     zeigeHinweis.value = true;
     return;
@@ -62,7 +42,7 @@ useTastatur((aktion) => {
         :key="i"
         class="emoji-feld emoji"
         :class="{ 'is-fokus': i === index }"
-        @click="auswahl(i)"
+        @click="waehle(i)"
       >
         {{ emojiZeichen }}
       </button>
