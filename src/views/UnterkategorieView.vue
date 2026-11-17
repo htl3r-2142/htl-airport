@@ -4,22 +4,37 @@ import { useRouter } from "vue-router";
 import { useAuswahl } from "@/composables/useAuswahl.js";
 import { reise } from "@/stores/reise.js";
 import kategorienDaten from "@/data/kategorien.json";
+import { useTastatur } from "@/composables/useTastatur.js";
 
 const router = useRouter();
 const kategorien = kategorienDaten.kategorien;
-
 const kategorie = kategorien.find((k) => k.id === reise.kategorie);
+
 
 let anzahl = 0;
 if (kategorie) {
   anzahl = kategorie.unterkategorien.length;
 }
-const { index, waehle } = useAuswahl(anzahl);
-
+const { index, weiter, zurueck, waehle } = useAuswahl(anzahl);
 onMounted(() => {
   if (!kategorie) {
     router.push("/");
   }
+});
+
+function unterkategorieBestaetigen() {
+  if (!kategorie) {
+    return;
+  }
+  reise.unterkategorie = kategorie.unterkategorien[index.value].id;
+  console.log("gespeichert:", reise.unterkategorie);
+  router.push("/flug");
+}
+
+useTastatur((aktion) => {
+  if (aktion === "LINKS") zurueck();
+  if (aktion === "RECHTS") weiter();
+  if (aktion === "BESTAETIGEN") unterkategorieBestaetigen();
 });
 </script>
 
