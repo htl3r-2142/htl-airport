@@ -3,7 +3,7 @@
     {
       "id": "selbststaendig",
       "label": "Selbstständig",
-      "icon": "",
+      "icon": "💡",
       "beschreibung": "Sein eigener Chef sein – mit eigener Firma oder als Freelancer.",
       "unterkategorien": [
         { "id": "startup", "label": "Startup", "icon": "", "gate": "A1" },
@@ -14,7 +14,7 @@
     {
       "id": "studieren",
       "label": "Studieren",
-      "icon": "",
+      "icon": "🎓",
       "beschreibung": "Nach der Matura weiterlernen – an einer Uni oder FH.",
       "unterkategorien": [
         { "id": "uni", "label": "Universität", "icon": "", "gate": "B1" },
@@ -25,7 +25,7 @@
     {
       "id": "angestellt",
       "label": "Angestellt",
-      "icon": "",
+      "icon": "💼",
       "beschreibung": "In einer Firma arbeiten – im Team, mit fixem Gehalt.",
       "unterkategorien": [
         { "id": "softwareentwicklung", "label": "Softwareentwicklung", "icon": "", "gate": "C1" },
