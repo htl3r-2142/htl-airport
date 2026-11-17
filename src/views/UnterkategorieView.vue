@@ -19,6 +19,5 @@ onMounted(() => {
   <section v-if="kategorie">
     <p><span>{{ reise.emoji }}</span> {{ reise.name }}</p>
     <h1><span>{{ kategorie.icon }}</span> {{ kategorie.label }}</h1>
-
   </section>
 </template>
