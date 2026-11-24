@@ -18,6 +18,14 @@ html {
   --c-fokus: #7fd4ff;
   --c-fehler: #ff5c5c;
 
+  /* Bordkarte (helles Papier) */
+  --c-ticket: #f6f4ef;
+  --c-ticket-abriss: #ebe6dc;
+  --c-ticket-feld: #e2dccf;
+  --c-ticket-text: #22272b;
+  --c-ticket-leise: #6b6f72;
+  --c-ticket-akzent: #4f7f7a;
+
   /* --- Schriften ---
      Bewusst System-Schriften: Die Station läuft offline, eine Schrift aus
      dem Internet wäre am Tag der offenen Tür nicht erreichbar. */
