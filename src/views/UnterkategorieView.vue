@@ -26,7 +26,7 @@ function unterkategorieBestaetigen() {
     return;
   }
   reise.unterkategorie = kategorie.unterkategorien[index.value].id;
-  router.push("/druck");
+  router.push("/bordkarte");
 }
 
 useTastatur((aktion) => {
