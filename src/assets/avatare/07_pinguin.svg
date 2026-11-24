@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs><filter id="w" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+<feDisplacementMap in="SourceGraphic" scale="3.2" result="d"/>
+<feMorphology in="d" operator="dilate" radius="6" result="m"/>
+<feFlood flood-color="#fbf7ee"/><feComposite in2="m" operator="in" result="bg"/>
+<feMerge><feMergeNode in="bg"/><feMergeNode in="d"/></feMerge></filter></defs>
+<g transform="translate(128 128) scale(0.9) translate(-128 -128)"><g filter="url(#w)" stroke="#26221f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+
+<ellipse cx="102" cy="228" rx="19" ry="8" fill="#f2a93b"/><ellipse cx="154" cy="228" rx="19" ry="8" fill="#f2a93b"/>
+<path d="M62,128 C40,158 44,186 58,198 C66,172 70,152 70,134 Z" fill="#26221f"/>
+<path d="M194,128 C216,158 212,186 198,198 C190,172 186,152 186,134 Z" fill="#26221f"/>
+<ellipse cx="128" cy="138" rx="70" ry="90" fill="#26221f"/>
+<path d="M128,92 C100,70 72,96 80,140 C84,190 100,214 128,214 C156,214 172,190 176,140 C184,96 156,70 128,92 Z" fill="#f6efe1" stroke="none"/>
+<circle cx="108" cy="110" r="5" fill="#26221f" stroke="none"/><circle cx="148" cy="110" r="5" fill="#26221f" stroke="none"/>
+<path d="M116,122 H140 L128,138 Z" fill="#f2a93b" stroke-width="5"/>
+<circle cx="96" cy="130" r="7" fill="#ec9f8f" stroke="none"/><circle cx="160" cy="130" r="7" fill="#ec9f8f" stroke="none"/>
+
+</g></g></svg>

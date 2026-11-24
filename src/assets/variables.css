@@ -21,7 +21,7 @@ html {
   /* --- Schriften ---
      Bewusst System-Schriften: Die Station läuft offline, eine Schrift aus
      dem Internet wäre am Tag der offenen Tür nicht erreichbar. */
-  --font-ui: 'Segoe UI', system-ui, Arial, sans-serif;
+  --font-ui: 'Inter Variable', 'Segoe UI', system-ui, Arial, sans-serif;
   --font-display: ui-monospace, Consolas, 'Courier New', monospace;
   --font-emoji: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 

@@ -1,3 +1,7 @@
+import '@fontsource-variable/inter'
+import './assets/variables.css'
+import './assets/base.css'
+
 import './assets/variables.css'
 import './assets/base.css'
 

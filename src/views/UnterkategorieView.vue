@@ -39,7 +39,7 @@ useTastatur((aktion) => {
 <template>
   <section v-if="kategorie" class="screen unterkategorie">
     <p class="passagier">
-      <span class="emoji">{{ reise.emoji }}</span> {{ reise.name }}
+      <img v-if="reise.emoji" :src="reise.emoji.bild" :alt="reise.emoji.name" class="passbild" /> {{ reise.name }}
     </p>
 
     <h1><span class="emoji">{{ kategorie.icon }}</span> {{ kategorie.label }}</h1>

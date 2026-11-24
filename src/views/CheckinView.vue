@@ -30,8 +30,9 @@ useTastatur((aktion) => {
 <template>
   <section class="screen checkin">
     <p class="passagier">
-      <span class="emoji">{{ reise.emoji }}</span> {{ reise.name }}
+      <img v-if="reise.emoji" :src="reise.emoji.bild" :alt="reise.emoji.name" class="passbild" /> {{ reise.name }}
     </p>
+  
 
     <h1>Wähle deinen Zukunftsweg</h1>
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs><filter id="w" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+<feDisplacementMap in="SourceGraphic" scale="3.2" result="d"/>
+<feMorphology in="d" operator="dilate" radius="6" result="m"/>
+<feFlood flood-color="#fbf7ee"/><feComposite in2="m" operator="in" result="bg"/>
+<feMerge><feMergeNode in="bg"/><feMergeNode in="d"/></feMerge></filter></defs>
+<g transform="translate(128 128) scale(0.9) translate(-128 -128)"><g filter="url(#w)" stroke="#26221f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+
+<path d="M98,72 Q94,52 80,46 M100,70 V44 M102,72 Q108,50 122,46" fill="none" stroke-width="6"/>
+<clipPath id="b"><path d="M38,150 C38,102 88,82 140,86 C175,89 195,106 200,126 L222,101 C230,95 238,103 233,111 L218,140 L236,165 C240,174 231,179 224,173 L200,156 C190,186 150,201 110,199 C64,197 38,181 38,150 Z"/></clipPath>
+<path d="M38,150 C38,102 88,82 140,86 C175,89 195,106 200,126 L222,101 C230,95 238,103 233,111 L218,140 L236,165 C240,174 231,179 224,173 L200,156 C190,186 150,201 110,199 C64,197 38,181 38,150 Z" fill="#5b8fb9"/>
+<ellipse cx="108" cy="205" rx="86" ry="40" fill="#d3e3ec" clip-path="url(#b)" stroke="none"/>
+<path d="M38,150 C38,102 88,82 140,86 C175,89 195,106 200,126 L222,101 C230,95 238,103 233,111 L218,140 L236,165 C240,174 231,179 224,173 L200,156 C190,186 150,201 110,199 C64,197 38,181 38,150 Z" fill="none"/>
+<path d="M54,163 Q80,172 108,163" fill="none" stroke-width="5"/>
+<circle cx="80" cy="134" r="6" fill="#26221f" stroke="none"/>
+<circle cx="98" cy="148" r="7" fill="#ec9f8f" stroke="none"/>
+
+</g></g></svg>

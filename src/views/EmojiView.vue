@@ -4,11 +4,10 @@ import { useRouter } from "vue-router";
 import { useTastatur } from "@/composables/useTastatur.js";
 import { useAuswahl } from "@/composables/useAuswahl.js";
 import { reise } from "@/stores/reise.js";
-import emojiDaten from "@/data/emojis.json";
+import { avatare } from "@/data/avatare.js";
 
 const router = useRouter();
-const emojis = emojiDaten.emojis;
-const { index, weiter, zurueck, waehle } = useAuswahl(emojis.length);
+const { index, weiter, zurueck, waehle } = useAuswahl(avatare.length);
 
 const zeigeHinweis = ref(false);
 
@@ -17,8 +16,8 @@ function weiterZumCheckin() {
     router.push("/pass");
     return;
   }
-  reise.emoji = emojis[index.value];
-  if (reise.emoji === "") {
+  reise.emoji = avatare[index.value];
+  if (reise.emoji === null) {
     zeigeHinweis.value = true;
     return;
   }
@@ -38,13 +37,13 @@ useTastatur((aktion) => {
 
     <div class="emoji-raster">
       <button
-        v-for="(emojiZeichen, i) in emojis"
-        :key="i"
-        class="emoji-feld emoji"
+        v-for="(avatar, i) in avatare"
+        :key="avatar.id"
+        class="emoji-feld"
         :class="{ 'is-fokus': i === index }"
         @click="waehle(i)"
       >
-        {{ emojiZeichen }}
+        <img :src="avatar.bild" :alt="avatar.name" class="emoji-bild" />
       </button>
     </div>
 
@@ -72,6 +71,12 @@ h1 {
   grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: var(--sp-2);
   width: 100%;
+}
+
+/* Bild füllt das Feld fast ganz aus */
+.emoji-bild {
+  width: 70%;
+  height: 70%;
 }
 
 .emoji-feld {

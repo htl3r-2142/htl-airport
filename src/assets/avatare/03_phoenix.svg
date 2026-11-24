@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs><filter id="w" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+<feDisplacementMap in="SourceGraphic" scale="3.2" result="d"/>
+<feMorphology in="d" operator="dilate" radius="6" result="m"/>
+<feFlood flood-color="#fbf7ee"/><feComposite in2="m" operator="in" result="bg"/>
+<feMerge><feMergeNode in="bg"/><feMergeNode in="d"/></feMerge></filter></defs>
+<g transform="translate(128 128) scale(0.9) translate(-128 -128)"><g filter="url(#w)" stroke="#26221f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+
+
+<path d="M120,186 C106,204 96,218 82,232 C102,230 114,224 124,214 Z" fill="#f2a93b"/>
+<path d="M120,132 C88,130 58,110 38,68 C60,82 70,84 80,80 C68,66 66,52 72,38 C88,66 106,82 124,104 Z" fill="#e4572e"/>
+<path d="M120,128 C100,124 84,114 72,98 C90,104 104,106 120,110 Z" fill="#f2a93b" stroke-width="5"/>
+<path d="M118,84 C112,72 114,62 120,54 C122,66 126,72 128,76 Z" fill="#f2a93b" stroke-width="5"/>
+
+<g transform="translate(256,0) scale(-1,1)">
+<path d="M120,186 C106,204 96,218 82,232 C102,230 114,224 124,214 Z" fill="#f2a93b"/>
+<path d="M120,132 C88,130 58,110 38,68 C60,82 70,84 80,80 C68,66 66,52 72,38 C88,66 106,82 124,104 Z" fill="#e4572e"/>
+<path d="M120,128 C100,124 84,114 72,98 C90,104 104,106 120,110 Z" fill="#f2a93b" stroke-width="5"/>
+<path d="M118,84 C112,72 114,62 120,54 C122,66 126,72 128,76 Z" fill="#f2a93b" stroke-width="5"/>
+</g>
+<path d="M128,186 C116,206 118,224 128,240 C138,224 140,206 128,186 Z" fill="#e4572e"/>
+<path d="M128,76 C122,66 124,56 128,46 C132,56 134,66 128,76 Z" fill="#e4572e" stroke-width="5"/>
+<ellipse cx="128" cy="150" rx="26" ry="44" fill="#f2a93b"/>
+<circle cx="128" cy="98" r="23" fill="#e4572e"/>
+<circle cx="119" cy="95" r="4" fill="#26221f" stroke="none"/><circle cx="137" cy="95" r="4" fill="#26221f" stroke="none"/>
+<path d="M122,104 H134 L128,114 Z" fill="#f2a93b" stroke-width="4"/>
+
+</g></g></svg>

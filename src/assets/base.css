@@ -54,7 +54,7 @@ h1, h2, p, ul { margin: 0; }
 .is-fokus {
   outline: 0.6rem solid var(--c-fokus);
   outline-offset: 0.4rem;
-  box-shadow: 0 0 0 0.3rem rgba(127, 212, 255, 0.35),
+  box-shadow: 0 0 0 0.3rem rgba(36, 101, 77, 0.35),
               0 0 2.4rem rgba(127, 212, 255, 0.55);
 }
 
@@ -114,4 +114,9 @@ h1, h2, p, ul { margin: 0; }
 .karte-text {
   font-size: var(--fs-text);
   color: var(--c-text-leise);
+}
+
+.passbild {
+  height: 4.5rem;
+  vertical-align: middle;
 }

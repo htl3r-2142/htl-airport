@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs><filter id="w" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+<feDisplacementMap in="SourceGraphic" scale="3.2" result="d"/>
+<feMorphology in="d" operator="dilate" radius="6" result="m"/>
+<feFlood flood-color="#fbf7ee"/><feComposite in2="m" operator="in" result="bg"/>
+<feMerge><feMergeNode in="bg"/><feMergeNode in="d"/></feMerge></filter></defs>
+<g transform="translate(128 128) scale(0.9) translate(-128 -128)"><g filter="url(#w)" stroke="#26221f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+
+<circle cx="216.0" cy="132.0" r="30" fill="#c8691c"/><circle cx="204.2" cy="176.0" r="30" fill="#c8691c"/><circle cx="172.0" cy="208.2" r="30" fill="#c8691c"/><circle cx="128.0" cy="220.0" r="30" fill="#c8691c"/><circle cx="84.0" cy="208.2" r="30" fill="#c8691c"/><circle cx="51.8" cy="176.0" r="30" fill="#c8691c"/><circle cx="40.0" cy="132.0" r="30" fill="#c8691c"/><circle cx="51.8" cy="88.0" r="30" fill="#c8691c"/><circle cx="84.0" cy="55.8" r="30" fill="#c8691c"/><circle cx="128.0" cy="44.0" r="30" fill="#c8691c"/><circle cx="172.0" cy="55.8" r="30" fill="#c8691c"/><circle cx="204.2" cy="88.0" r="30" fill="#c8691c"/>
+<circle cx="128" cy="132" r="90" fill="#c8691c" stroke="none"/>
+<circle cx="82" cy="86" r="17" fill="#f2b84b"/><circle cx="174" cy="86" r="17" fill="#f2b84b"/>
+<circle cx="128" cy="136" r="62" fill="#f2b84b"/>
+<circle cx="106" cy="126" r="7" fill="#26221f" stroke="none"/><circle cx="150" cy="126" r="7" fill="#26221f" stroke="none"/>
+<ellipse cx="128" cy="162" rx="28" ry="20" fill="#f9e2ae" stroke-width="5"/>
+<path d="M117,150 H139 L128,161 Z" fill="#7a3f22" stroke-width="5"/>
+<path d="M128,162 V170 M117,174 Q128,182 128,170 Q128,182 139,174" fill="none" stroke-width="5"/>
+
+</g></g></svg>
