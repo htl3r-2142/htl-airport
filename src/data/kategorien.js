@@ -12,11 +12,11 @@ import palette from "@/assets/pathIcons/19_palette.svg";
 import schloss from "@/assets/pathIcons/20_schloss.svg";
 import klemmbrett from "@/assets/pathIcons/21_klemmbrett.svg";
 
-// alle Zukunftswege mit ihren Unterkategorien
 export const kategorien = [
   {
     id: "selbststaendig",
     label: "Selbstständig",
+    code: "SEL",
     bild: gluehbirne,
     beschreibung: "Sei dein eigener Chef",
     unterkategorien: [
@@ -28,6 +28,7 @@ export const kategorien = [
   {
     id: "studieren",
     label: "Studieren",
+    code: "STU",
     bild: doktorhut,
     beschreibung: "Nach der Matura weiterbilden",
     unterkategorien: [
@@ -39,6 +40,7 @@ export const kategorien = [
   {
     id: "angestellt",
     label: "Angestellt",
+    code: "ANG",
     bild: aktentasche,
     beschreibung: "In einer Firma arbeiten – im Team, mit fixem Gehalt.",
     unterkategorien: [
