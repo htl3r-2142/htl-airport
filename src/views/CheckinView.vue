@@ -3,10 +3,9 @@ import { useRouter } from "vue-router";
 import { useTastatur } from "@/composables/useTastatur.js";
 import { useAuswahl } from "@/composables/useAuswahl.js";
 import { reise } from "@/stores/reise.js";
-import kategorienDaten from "@/data/kategorien.json";
+import { kategorien } from "@/data/kategorien.js";
 
 const router = useRouter();
-const kategorien = kategorienDaten.kategorien;
 const { index, weiter, zurueck, waehle } = useAuswahl(kategorien.length);
 
 function kategorieBestaetigen() {
@@ -44,7 +43,7 @@ useTastatur((aktion) => {
         :class="{ 'is-fokus': i === index }"
         @click="waehle(i)"
       >
-        <span class="karte-icon emoji">{{ kategorie.icon }}</span>
+        <img :src="kategorie.bild" alt="" class="karte-bild" />
         <span class="karte-titel">{{ kategorie.label }}</span>
         <span class="karte-text">{{ kategorie.beschreibung }}</span>
       </button>

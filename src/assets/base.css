@@ -111,6 +111,10 @@ h1, h2, p, ul { margin: 0; }
   font-weight: bold;
 }
 
+.karte-bild {
+  width: 16rem;
+  height: 16rem;
+}
 .karte-text {
   font-size: var(--fs-text);
   color: var(--c-text-leise);

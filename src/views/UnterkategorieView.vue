@@ -3,11 +3,10 @@ import { onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useAuswahl } from "@/composables/useAuswahl.js";
 import { reise } from "@/stores/reise.js";
-import kategorienDaten from "@/data/kategorien.json";
+import { kategorien } from "@/data/kategorien.js";
 import { useTastatur } from "@/composables/useTastatur.js";
 
 const router = useRouter();
-const kategorien = kategorienDaten.kategorien;
 const kategorie = kategorien.find((k) => k.id === reise.kategorie);
 
 
@@ -42,7 +41,7 @@ useTastatur((aktion) => {
       <img v-if="reise.emoji" :src="reise.emoji.bild" :alt="reise.emoji.name" class="passbild" /> {{ reise.name }}
     </p>
 
-    <h1><span class="emoji">{{ kategorie.icon }}</span> {{ kategorie.label }}</h1>
+    <h1><img :src="kategorie.bild" alt="" class="titel-bild" /> {{ kategorie.label }}</h1>
 
     <div class="karten-raster">
       <button
@@ -52,7 +51,7 @@ useTastatur((aktion) => {
         :class="{ 'is-fokus': i === index }"
         @click="waehle(i)"
       >
-        <span class="karte-icon emoji">{{ unter.icon }}</span>
+        <img :src="unter.bild" alt="" class="karte-bild" />
         <span class="karte-titel">{{ unter.label }}</span>
       </button>
     </div>
@@ -89,5 +88,11 @@ h1 {
   margin-top: auto;
   font-size: var(--fs-gross2);
   color: var(--c-text-leise);
+}
+
+/* Icon in der Überschrift */
+.titel-bild {
+  height: 8rem;
+  vertical-align: middle;
 }
 </style>

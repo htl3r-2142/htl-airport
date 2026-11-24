@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs><filter id="w" x="-10%" y="-10%" width="120%" height="120%">
+<feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/>
+<feDisplacementMap in="SourceGraphic" scale="3.2" result="d"/>
+<feMorphology in="d" operator="dilate" radius="6" result="m"/>
+<feFlood flood-color="#fbf7ee"/><feComposite in2="m" operator="in" result="bg"/>
+<feMerge><feMergeNode in="bg"/><feMergeNode in="d"/></feMerge></filter></defs>
+<g transform="translate(128 128) scale(0.9) translate(-128 -128)"><g filter="url(#w)" stroke="#26221f" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+
+<rect x="44" y="94" width="42" height="136" rx="6" fill="#7d8a96"/>
+<rect x="170" y="94" width="42" height="136" rx="6" fill="#7d8a96"/>
+<rect x="80" y="36" width="96" height="194" rx="8" fill="#aab4bd"/>
+<rect x="96" y="60" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="120" y="60" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="144" y="60" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="96" y="88" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="120" y="88" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="144" y="88" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="96" y="116" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="120" y="116" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="144" y="116" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="96" y="144" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="120" y="144" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="144" y="144" width="16" height="18" rx="3" fill="#86c5e0" stroke-width="4"/><rect x="56" y="112" width="14" height="14" rx="2" fill="#86c5e0" stroke-width="4"/><rect x="186" y="112" width="14" height="14" rx="2" fill="#86c5e0" stroke-width="4"/><rect x="56" y="140" width="14" height="14" rx="2" fill="#86c5e0" stroke-width="4"/><rect x="186" y="140" width="14" height="14" rx="2" fill="#86c5e0" stroke-width="4"/><rect x="56" y="168" width="14" height="14" rx="2" fill="#86c5e0" stroke-width="4"/><rect x="186" y="168" width="14" height="14" rx="2" fill="#86c5e0" stroke-width="4"/>
+<rect x="112" y="186" width="32" height="44" rx="4" fill="#2f3e46"/>
+<path d="M30,232 H226" fill="none"/>
+
+</g></g></svg>
