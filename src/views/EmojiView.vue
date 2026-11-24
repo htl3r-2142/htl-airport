@@ -51,7 +51,7 @@ useTastatur((aktion) => {
       ← → zum Auswählen <br />
       <strong>Enter</strong> zum Bestätigen
     </p>
-    <p v-if="zeigeHinweis" class="fehler">Bitte wähle zuerst ein Emoji aus.</p>
+    <p v-if="zeigeHinweis" class="fehler">Bitte wähle zuerst deinen Avatar aus</p>
   </section>
 </template>
 <style scoped>

@@ -44,7 +44,7 @@ useTastatur((aktion) => {
     />
 
     <p v-if="hinweis" class="error">
-      Bitte gib zuerst deinen Namen ein
+      Bitte gib zuerst deinen Vornamen ein
     </p>
 
     <p class="hinweis">Enter</p>
