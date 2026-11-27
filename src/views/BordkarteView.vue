@@ -26,55 +26,66 @@ const sitz = "23F";
     <p class="passagier">
       <img v-if="reise.emoji" :src="reise.emoji.bild" :alt="reise.emoji.name" class="passbild" /> {{ reise.name }}
     </p>
-    <div class="bordkarte">
-      <div class="haupt">
-        <h1 class="titel">Deine Bordkarte</h1>
 
-        <div class="strecke">
-          <div class="ort">
-            <p class="code">HTL</p>
-            <p class="stadt">Rennweg</p>
-          </div>
-
-          <span class="flugzeug">✈</span>
-
-          <div class="ort ort-ziel">
-            <p class="code">{{ kategorie.code }}</p>
-            <p class="stadt">{{ kategorie.label }}</p>
-          </div>
-        </div>
-
-        <div class="felder">
-          <div>
-            <p class="feld-titel">Passagier</p>
-            <p class="feld-wert">{{ reise.name }}</p>
-          </div>
-          <div>
-            <p class="feld-titel">Richtung</p>
-            <p class="feld-wert">{{ unter.label }}</p>
-          </div>
-          <div>
-            <p class="feld-titel">Gate</p>
-            <p class="feld-wert">{{ unter.gate }}</p>
-          </div>
-          <div>
-            <p class="feld-titel">Boarding</p>
-            <p class="feld-wert">{{ boarding }}</p>
-          </div>
-          <div>
-            <p class="feld-titel">Sitz</p>
-            <p class="feld-wert">{{ sitz }}</p>
-          </div>
-        </div>
+    <div class="druck-bereich">
+      <!-- der Drucker links -->
+      <div class="drucker">
+        <div class="drucker-licht"></div>
+        <div class="drucker-schlitz"></div>
       </div>
 
-      <div class="abriss">
-        <img :src="reise.emoji.bild" :alt="reise.emoji.name" class="abriss-foto" />
-        <p class="abriss-name">{{ reise.name }}</p>
-        <div class="strichcode"></div>
+      <!-- nur was in diesem Fenster ist, ist sichtbar -->
+      <div class="druck-fenster">
+        <div class="bordkarte">
+          <div class="haupt">
+            <h1 class="titel">Deine Bordkarte</h1>
+
+            <div class="strecke">
+              <div class="ort">
+                <p class="code">HTL</p>
+                <p class="stadt">Rennweg</p>
+              </div>
+
+              <span class="flugzeug">✈</span>
+
+              <div class="ort ort-ziel">
+                <p class="code">{{ kategorie.code }}</p>
+                <p class="stadt">{{ kategorie.label }}</p>
+              </div>
+            </div>
+
+            <div class="felder">
+              <div>
+                <p class="feld-titel">Passagier</p>
+                <p class="feld-wert">{{ reise.name }}</p>
+              </div>
+              <div>
+                <p class="feld-titel">Richtung</p>
+                <p class="feld-wert">{{ unter.label }}</p>
+              </div>
+              <div>
+                <p class="feld-titel">Gate</p>
+                <p class="feld-wert">{{ unter.gate }}</p>
+              </div>
+              <div>
+                <p class="feld-titel">Boarding</p>
+                <p class="feld-wert">{{ boarding }}</p>
+              </div>
+              <div>
+                <p class="feld-titel">Sitz</p>
+                <p class="feld-wert">{{ sitz }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="abriss">
+            <img :src="reise.emoji.bild" :alt="reise.emoji.name" class="abriss-foto" />
+            <p class="abriss-name">{{ reise.name }}</p>
+            <div class="strichcode"></div>
+          </div>
+        </div>
       </div>
     </div>
-
   </section>
 </template>
 
@@ -231,5 +242,76 @@ const sitz = "23F";
 .passagier {
   font-size: var(--fs-text);
   color: var(--c-text-leise);
+}
+
+/* ---------- Druck-Animation ---------- */
+
+/* Drucker und Fenster nebeneinander */
+.druck-bereich {
+  display: flex;
+  width: 100%;
+}
+
+/* der Drucker-Kasten */
+.drucker {
+  position: relative;
+  /* Drucker nicht zusammenquetschen */
+  flex-shrink: 0;
+  width: 14rem;
+  border: var(--border-w) solid var(--c-border);
+  border-radius: var(--radius);
+  background-color: var(--c-surface-hell);
+}
+
+/* Schlitz am rechten Rand, aus dem die Karte kommt */
+.drucker-schlitz {
+  position: absolute;
+  top: var(--sp-4);
+  bottom: var(--sp-4);
+  right: var(--sp-2);
+  width: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--c-bg);
+}
+
+/* kleines Lämpchen, das während dem Drucken blinkt */
+.drucker-licht {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--c-ticket-akzent);
+  animation: blinken 0.3s 0.5s 10;
+}
+
+@keyframes blinken {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* das Fenster: alles außerhalb wird abgeschnitten */
+.druck-fenster {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  /* Platz, damit der Schatten der Karte nicht abgeschnitten wird */
+  padding: var(--sp-4) var(--sp-4) var(--sp-4) 0;
+}
+
+/* Karte schiebt sich Ruck für Ruck aus dem Drucker */
+@keyframes drucken {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.druck-fenster .bordkarte {
+  animation: drucken 3s steps(40) 0.5s both;
 }
 </style>
